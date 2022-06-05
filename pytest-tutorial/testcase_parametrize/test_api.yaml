@@ -1,0 +1,33 @@
+# Case One
+- 
+  name: the name of API
+  requests: 
+    url: https://api.weixin.qq.com/cgi-bin/token
+    method: GET
+    headers: 
+      Content-Type: application/json
+    params:
+      grant_type: client_credential
+      appid: wx6b11b3efd1cdc290
+      secret: 106a9c6157c4db5f6029918738f9529d
+
+  # write an assertion for validation
+  validate:
+    - eq: {expires_in: 7200}
+
+# Case Two
+- 
+  name: the 2nd name of API
+  requests: 
+    url: https://api.weixin.qq.com/cgi-bin/token
+    method: GET
+    headers: 
+      Content-Type: application/json
+    params:
+      grant_type: client_credential
+      appid: wx6b11b3efd1cdc290
+      secret: 106a9c6157c4db5f6029918738f9529d
+
+  # write an assertion for validation
+  validate:
+    - eq: {expires_in: 7200}
